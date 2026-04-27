@@ -1327,3 +1327,375 @@ section { padding: 90px 5%; }
   .form-row-2 { grid-template-columns: 1fr; }
   .nav-auth-group .nav-register-btn { display: none; }
 }
+
+/* =========================================
+   CITY CARD — BUTTON RESET + CTA HINT
+   ========================================= */
+.city-card-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  width: 100%;
+  display: block;
+}
+
+.city-card-cta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  margin-top: 10px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.city-card-btn:hover .city-card-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.city-card-btn:hover .city-card-img {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+
+/* =========================================
+   WIDE MODAL (city panel)
+   ========================================= */
+.modal-box-wide {
+  max-width: 760px;
+}
+
+/* =========================================
+   CITY PANEL MODAL CONTENTS
+   ========================================= */
+.city-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.city-panel-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.city-panel-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.city-panel-sub {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  font-weight: 300;
+}
+
+.city-panel-tag {
+  background: rgba(245,166,35,0.12);
+  color: var(--gold-dark);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+}
+
+/* ── Filter row ── */
+.city-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.city-filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+
+.city-filter-pill {
+  background: var(--gray-100);
+  border: 1.5px solid var(--gray-200);
+  color: var(--gray-600);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.city-filter-pill:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  background: rgba(13,31,60,0.04);
+}
+
+.city-filter-pill.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+/* ── Property list ── */
+.city-props-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 52vh;
+  overflow-y: auto;
+  padding-right: 4px;
+  margin-bottom: 20px;
+}
+
+.city-props-list::-webkit-scrollbar { width: 5px; }
+.city-props-list::-webkit-scrollbar-track { background: var(--gray-100); border-radius: 4px; }
+.city-props-list::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 4px; }
+
+.city-no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--gray-400);
+  font-size: 0.9rem;
+}
+
+/* ── Property card ── */
+.prop-card {
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.prop-card:hover {
+  border-color: rgba(13,31,60,0.2);
+  box-shadow: 0 4px 20px rgba(13,31,60,0.08);
+}
+
+.prop-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.prop-emoji-wrap {
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.prop-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.prop-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.prop-card-addr {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prop-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.prop-card-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-bottom: 12px;
+}
+
+.prop-meta-item {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  font-weight: 400;
+}
+
+.prop-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.prop-tag {
+  background: rgba(13,31,60,0.06);
+  color: var(--navy-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.prop-card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.prop-enquire-btn {
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.prop-enquire-btn:hover { border-color: var(--navy); background: rgba(13,31,60,0.04); }
+
+.prop-apply-btn {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 9px 22px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 3px 12px rgba(245,166,35,0.35);
+  flex: 1;
+}
+.prop-apply-btn:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(245,166,35,0.45);
+}
+
+/* ── City panel footer ── */
+.city-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  flex-wrap: wrap;
+}
+
+.city-footer-link {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+.city-footer-link:hover { text-decoration: underline; color: var(--navy-light); }
+
+/* =========================================
+   APPLY MODAL — property tag header
+   ========================================= */
+.apply-property-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cream);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+
+.apply-prop-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.apply-property-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+.apply-property-city {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  font-weight: 300;
+  margin-top: 2px;
+}
+
+.apply-textarea {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--gray-200);
+  background: var(--gray-100);
+  outline: none;
+  resize: vertical;
+  width: 100%;
+  transition: border-color var(--transition);
+  color: var(--gray-800);
+}
+.apply-textarea:focus {
+  border-color: var(--navy);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(13,31,60,0.08);
+}
+
+@media (max-width: 760px) {
+  .modal-box-wide { max-width: 98vw; }
+  .prop-card-meta { grid-template-columns: 1fr; }
+  .city-props-list { max-height: 44vh; }
+}
